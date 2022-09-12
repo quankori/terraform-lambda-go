@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 
 	"github.com/aws/aws-lambda-go/events"
 	"github.com/aws/aws-lambda-go/lambda"
@@ -16,6 +17,7 @@ func list() (events.APIGatewayProxyResponse, error) {
 	books := []Books{
 		{Id: 1, Name: "Golang"},
 	}
+	fmt.Println("aa")
 
 	res, _ := json.Marshal(&books)
 	return events.APIGatewayProxyResponse{
